@@ -1,0 +1,145 @@
+ :root {
+  --deep: #4c1d95;
+  --purple: #7c3aed;
+  --lavender: #c4b5fd;
+  --pale: #f5f0ff;
+  --pink: #ffd6e7;
+  --ink: #33204f;
+  --muted: #786b8e;
+  --white: #fffaff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; color: var(--ink); font-family: "Nunito", sans-serif;
+  background: radial-gradient(circle at 10% 10%, #fce7f3 0, transparent 25%),
+              radial-gradient(circle at 90% 28%, #e9d5ff 0, transparent 27%),
+              #fbf8ff;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+.topbar { max-width: 1180px; margin: auto; padding: 20px 6%; display: flex; justify-content: space-between; align-items: center; }
+.brand { font-weight: 900; color: var(--deep); letter-spacing: .3px; }
+.music-note { display: grid; place-items: center; background: white; width: 44px; height: 44px; border-radius: 50%; box-shadow: 0 8px 24px #4c1d9518; font-size: 1.3rem; }
+.section { width: min(1120px, 90%); margin: auto; }
+.hero { min-height: 600px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; padding: 45px 0 80px; position: relative; }
+.eyebrow { color: var(--purple); font-weight: 900; letter-spacing: 2px; text-transform: uppercase; font-size: .72rem; }
+h1 { font-size: clamp(2.8rem, 6vw, 5.4rem); line-height: 1.04; margin: 18px 0; letter-spacing: -2px; color: var(--deep); }
+h1 span { font-family: "Pacifico", cursive; color: #a855f7; font-weight: 400; letter-spacing: 0; }
+.lead { max-width: 470px; color: var(--muted); font-size: 1.08rem; line-height: 1.8; }
+.age-bubble { display: inline-flex; align-items: center; gap: 12px; background: white; padding: 12px 20px 12px 12px; border-radius: 60px; box-shadow: 0 12px 35px #7c3aed19; margin: 12px 0 22px; font-weight: 800; line-height: 1.1; }
+.age-number { display: grid; place-items: center; width: 64px; height: 64px; background: linear-gradient(135deg, #a78bfa, #7c3aed); border-radius: 50%; color: white; font-size: 2rem; }
+.cta { display: inline-block; border: 0; cursor: pointer; background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: white; font: inherit; font-weight: 900; padding: 14px 23px; border-radius: 999px; box-shadow: 0 9px 22px #7c3aed35; transition: transform .2s, box-shadow .2s; }
+.cta:hover { transform: translateY(-3px); box-shadow: 0 13px 27px #7c3aed40; }
+.photo-frame { position: relative; background: white; padding: 12px 12px 52px; border-radius: 24px; box-shadow: 0 25px 70px #4c1d9522; transform: rotate(2deg); }
+.hero-photo img { width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; object-position: center 25%; border-radius: 16px; display: block; }
+.photo-caption { position: absolute; bottom: 15px; left: 0; width: 100%; text-align: center; font-family: "Pacifico", cursive; color: #8b5cf6; font-size: 1.15rem; }
+.sticker { position: absolute; z-index: 2; display: grid; place-items: center; border-radius: 50%; box-shadow: 0 7px 18px #4c1d9518; }
+.sticker-star { top: -23px; right: -22px; background: #fef08a; width: 58px; height: 58px; color: #7c3aed; font-size: 2rem; }
+.sticker-heart { bottom: 70px; left: -25px; background: #fbcfe8; width: 52px; height: 52px; color: #a21caf; font-size: 2rem; }
+.floating { position: absolute; pointer-events: none; }
+.flower { color: #c084fc; font-size: 3.5rem; bottom: 18px; left: 45%; transform: rotate(-15deg); }
+.bow { right: 0; top: 70px; font-size: 2.4rem; transform: rotate(15deg); }
+.countdown-card { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 30px 36px; background: linear-gradient(120deg, #ede9fe, #fce7f3); border: 1px solid #ffffff; border-radius: 28px; box-shadow: 0 15px 45px #6d28d912; }
+.countdown-card h2 { margin: 5px 0; color: var(--deep); font-size: clamp(1.5rem, 3vw, 2rem); }
+.muted { color: var(--muted); line-height: 1.7; }
+.timer { display: flex; gap: 12px; flex-shrink: 0; }
+.timer div { min-width: 66px; padding: 12px 8px; border-radius: 17px; background: #fff; text-align: center; box-shadow: 0 7px 20px #6d28d910; }
+.timer strong { display: block; color: var(--purple); font-size: 1.7rem; line-height: 1.2; }
+.timer span { color: var(--muted); font-size: .75rem; }
+.memories { padding: 100px 0 40px; }
+.section-heading { text-align: center; max-width: 650px; margin: 0 auto 50px; }
+.section-heading h2 { font-size: clamp(2rem, 4vw, 3.2rem); margin: 8px 0; color: var(--deep); }
+.memory-card { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(25px, 6vw, 70px); align-items: center; margin: 38px 0 65px; }
+.memory-card.reverse .memory-photo { order: 2; }
+.memory-card.reverse .memory-text { order: 1; }
+.memory-photo { position: relative; padding: 11px; background: white; border-radius: 23px; box-shadow: 0 18px 50px #4c1d9518; transform: rotate(-2deg); }
+.memory-card.reverse .memory-photo { transform: rotate(2deg); }
+.memory-photo img { width: 100%; height: 340px; object-fit: cover; object-position: center 28%; display: block; border-radius: 15px; }
+.number { position: absolute; top: -15px; left: -15px; z-index: 2; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; color: white; font-weight: 900; background: linear-gradient(135deg, #c084fc, #7c3aed); border: 4px solid #fbf8ff; }
+.memory-text { padding: 10px 0; }
+.tag { display: inline-block; background: #f3e8ff; color: #7e22ce; font-size: .75rem; font-weight: 900; padding: 8px 12px; border-radius: 99px; }
+.memory-text h3 { color: var(--deep); font-size: clamp(1.6rem, 3vw, 2.3rem); margin: 15px 0 12px; line-height: 1.2; }
+.memory-text p { color: #6e607f; font-size: 1.02rem; line-height: 1.9; margin: 0; }
+.doodle { display: block; margin-top: 18px; color: #a855f7; font-family: "Pacifico", cursive; font-size: 1.1rem; }
+.relationship .memory-photo { transform: rotate(-1deg); }
+.relationship .memory-photo img { height: 310px; object-position: center; }
+.letter-section { padding: 55px 0 95px; }
+.letter { max-width: 800px; margin: auto; padding: clamp(28px, 6vw, 58px); background: #fff; border: 2px dashed #d8b4fe; border-radius: 28px; box-shadow: 0 20px 60px #4c1d9515; position: relative; overflow: hidden; }
+.letter:before, .letter:after { content: "✿"; position: absolute; font-size: 5rem; color: #f5d0fe; opacity: .65; }
+.letter:before { top: -20px; right: 15px; }
+.letter:after { bottom: -35px; left: 12px; }
+.letter-top { color: #a855f7; font-size: .8rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+.letter h2 { font-family: "Pacifico", cursive; color: var(--deep); font-weight: 400; font-size: 2.5rem; margin: 22px 0; }
+.letter p { position: relative; z-index: 1; line-height: 1.95; color: #6e607f; }
+.signature { font-family: "Pacifico", cursive; color: #9333ea; font-size: 1.3rem; margin-top: 24px; }
+.letter-stickers { margin-top: 20px; font-size: 1.6rem; letter-spacing: 8px; }
+footer { text-align: center; padding: 30px 20px 45px; color: #76648b; }
+footer span { color: #ec4899; }
+.footer-small { font-size: .82rem; }
+.small-cta { margin-top: 8px; font-size: .9rem; padding: 11px 18px; }
+.sparkles span { position: fixed; z-index: -1; color: #c084fc; opacity: .5; animation: float 7s ease-in-out infinite; font-size: 1.7rem; }
+.sparkles span:nth-child(1) { left: 4%; top: 25%; }
+.sparkles span:nth-child(2) { right: 5%; top: 45%; animation-delay: -2s; color: #f472b6; }
+.sparkles span:nth-child(3) { left: 8%; top: 78%; animation-delay: -3s; }
+.sparkles span:nth-child(4) { right: 8%; top: 83%; animation-delay: -1s; }
+.sparkles span:nth-child(5) { right: 17%; top: 12%; animation-delay: -4s; }
+.sparkles span:nth-child(6) { left: 45%; top: 55%; animation-delay: -5s; }
+@keyframes float { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-18px) rotate(12deg); } }
+.confetti { position: fixed; z-index: 99; top: -30px; pointer-events: none; animation: fall linear forwards; }
+@keyframes fall { to { transform: translateY(110vh) rotate(720deg); opacity: .2; } }
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; padding-top: 25px; gap: 30px; }
+  .hero-copy { text-align: center; }
+  .lead { margin: auto; }
+  .hero-photo { width: min(440px, 90%); margin: 0 auto; }
+  .hero-photo img { height: auto; aspect-ratio: 2 / 3; }
+  .bow { right: 4%; top: 20px; }
+  .flower { left: 4%; bottom: -10px; }
+  .countdown-card { flex-direction: column; align-items: flex-start; padding: 25px 20px; }
+  .timer { width: 100%; gap: 7px; }
+  .timer div { min-width: 0; flex: 1; padding: 12px 4px; }
+  .timer strong { font-size: 1.35rem; }
+  .memory-card, .memory-card.reverse { grid-template-columns: 1fr; gap: 24px; margin-bottom: 55px; }
+  .memory-card.reverse .memory-photo, .memory-card.reverse .memory-text { order: initial; }
+  .memory-photo { width: min(480px, 94%); margin: auto; }
+  .memory-photo img { height: 330px; }
+  .memory-text { padding: 0 4px; }
+  .memories { padding-top: 75px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+
+/* Mini game pembuka */
+body.locked { overflow: hidden; }
+body.locked .topbar, body.locked main, body.locked .sparkles { display: none; }
+.game-gate { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; overflow-y: auto; padding: 24px; background: radial-gradient(circle at 15% 15%, #fce7f3 0, transparent 30%), radial-gradient(circle at 85% 85%, #c4b5fd 0, transparent 32%), linear-gradient(135deg, #fbf8ff, #ede9fe); }
+.game-panel { width: min(640px, 100%); padding: clamp(24px, 5vw, 44px); text-align: center; background: rgba(255,255,255,.92); border: 1px solid #fff; border-radius: 30px; box-shadow: 0 25px 80px #4c1d9525; }
+.game-decor { color: #a855f7; font-size: 1.7rem; letter-spacing: 12px; margin-bottom: 12px; }
+.game-panel h1 { font-size: clamp(2rem, 6vw, 3.2rem); letter-spacing: -1px; margin: 12px 0; }
+.game-panel h1 span { display: inline-block; font-size: .78em; }
+.game-intro { color: var(--muted); line-height: 1.7; max-width: 440px; margin: 0 auto 22px; }
+.memory-game { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; max-width: 420px; margin: 0 auto; }
+.game-card { aspect-ratio: 1; border: 2px solid #e9d5ff; border-radius: 17px; background: linear-gradient(145deg, #a78bfa, #7c3aed); color: white; font-size: clamp(1.5rem, 5vw, 2.2rem); cursor: pointer; box-shadow: 0 6px 15px #7c3aed20; transition: transform .18s, background .18s; }
+.game-card:hover:not(:disabled) { transform: translateY(-3px); }
+.game-card.revealed, .game-card.matched { background: #faf5ff; color: #6d28d9; border-color: #c4b5fd; }
+.game-card.matched { background: #f3e8ff; border-color: #a78bfa; }
+.game-card:disabled { cursor: default; }
+.game-status { min-height: 28px; color: #6d28d9; font-weight: 900; margin: 18px 0 10px; }
+.game-continue[hidden] { display: none; }
+@media (max-width: 420px) { .game-gate { padding: 12px; } .game-panel { padding: 22px 16px; border-radius: 24px; } .memory-game { gap: 7px; } .game-card { border-radius: 12px; } }
+
+.memory-photo.portrait-two-three img { aspect-ratio: 2 / 3; height: auto; object-fit: cover; object-position: center; }
+.relationship .memory-photo.portrait-two-three img { height: auto; aspect-ratio: 2 / 3; }
+
+
+/* Pemutar audio playlist, muncul setelah mini game selesai */
+.music-player { position: fixed; z-index: 900; right: 16px; bottom: 16px; width: min(330px, calc(100vw - 32px)); padding: 12px; border: 1px solid #e9d5ff; border-radius: 20px; background: rgba(255,250,255,.96); box-shadow: 0 12px 40px #4c1d9530; backdrop-filter: blur(12px); }
+.music-player[hidden] { display: none; }
+.music-player-heading { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; color: var(--deep); }
+.music-icon { display: grid; place-items: center; width: 38px; height: 38px; flex: 0 0 38px; border-radius: 50%; color: white; font-size: 1.4rem; background: linear-gradient(135deg, #c084fc, #7c3aed); }
+.music-player-heading strong, .music-player-heading small { display: block; }
+.music-player-heading strong { font-size: .92rem; }
+.music-player-heading small { margin-top: 2px; color: var(--muted); font-size: .75rem; }
+.music-player audio { display: block; width: 100%; height: 38px; }
+@media (max-width: 480px) { .music-player { right: 10px; bottom: 10px; width: min(290px, calc(100vw - 20px)); padding: 9px; } }
